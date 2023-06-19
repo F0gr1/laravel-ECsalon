@@ -20,6 +20,10 @@ class StoreController extends Controller
         ]);
     }
 
+    public function sample()
+    {
+        return view('Store/sample');
+    }
     /**
      * Show the form for creating a new resource.
      */
