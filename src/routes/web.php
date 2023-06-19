@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\AddImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,7 @@ use App\Http\Controllers\StoreController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/store', [StoreController::class, 'index']);
+
+Route::get('/', [StoreController::class, 'index']);
+Route::get('/image/index', [AddImageController::class, 'index']);
+Route::post('add_image', [AddImageController::class ,'addImage'])->name('add_image');

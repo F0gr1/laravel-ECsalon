@@ -14,6 +14,6 @@ class Store extends Model
      * @var string
      */
     protected $table = 'stores';
-    protected $fillable =['name' , 'phoneNumber' , 'prefrences' , 'municipalty' , 'adress' , 'icon' , 'description'];
+    protected $fillable =['id' ,'name' , 'phoneNumber' , 'prefrences' , 'municipalty' , 'adress' , 'icon' , 'description'];
     protected $guarded = ['created_at' , 'updated_at'];
 }

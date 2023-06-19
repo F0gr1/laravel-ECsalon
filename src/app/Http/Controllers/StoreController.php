@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Store;
+use App\Service\StoreService;
 class StoreController extends Controller
 {
+    public function __construct(StoreService $StoreService)
+    {
+        $this->StoreService = $StoreService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $Store = Store::all();
-        dd($Store);
-        return view('index', compact('hello', 'hello_array'));
+        return view('Store/index',[
+            'stores' => StoreService::getstoreList()
+        ]);
     }
 
     /**
