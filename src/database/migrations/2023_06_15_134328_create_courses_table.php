@@ -21,6 +21,12 @@ return new class extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->String('name');
+            $table->enum('size',
+                [
+                    'S' , 'M' , 'L' ,'LL' 
+                ]
+            );
+            $table->String('icon');
             $table->integer('price') ->unsigned();
             $table->timestamps();
         });

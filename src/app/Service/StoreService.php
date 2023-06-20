@@ -14,4 +14,9 @@ class StoreService
         return $stores;
     }
 
+    public static function getStore($id)
+    {
+        $store = StoreRepository::findStore($id);
+        return $store;
+    }
 }

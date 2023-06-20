@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Service\StoreService;
 class StoreController extends Controller
 {
-    public function __construct(StoreService $StoreService)
+    private $store;
+    public function __construct(StoreService $store)
     {
-        $this->StoreService = $StoreService;
+        $this->StoreService = $store;
     }
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class StoreController extends Controller
     public function index()
     {
         return view('Store/index',[
-            'stores' => StoreService::getstoreList()
+            'stores' => $this->StoreService->getstoreList()
         ]);
     }
 

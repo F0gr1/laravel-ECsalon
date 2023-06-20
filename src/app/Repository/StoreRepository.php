@@ -9,4 +9,9 @@ class StoreRepository
     {
         return Store::all();
     }
+
+    public static function findStore($id)
+    {
+        return Store::find($id);
+    }
 }

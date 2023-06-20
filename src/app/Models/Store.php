@@ -16,4 +16,8 @@ class Store extends Model
     protected $table = 'stores';
     protected $fillable =['id' ,'name' , 'phoneNumber' , 'prefrences' , 'municipalty' , 'adress' , 'icon' , 'description'];
     protected $guarded = ['created_at' , 'updated_at'];
+
+    public function courses(){
+        return $this->hasMany(Course::class , 'id');
+    }
 }
