@@ -17,7 +17,7 @@ class CourseController extends Controller
      */
     public function index($id)
     {
-        return view('welcome',[
+        return view('StoreDetail.index',[
             'courses' => CourseService::getCourse($id)
         ]);
     }

@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [StoreController::class, 'index']);
 Route::get('/sample', [StoreController::class, 'sample']);
-Route::get('/store/{id}',[CourseController::class ,'index']);
+Route::get('/store/course/{id}',[CourseController::class ,'index']);
 Route::get('/image/index', [AddImageController::class, 'index']);
 Route::post('add_image', [AddImageController::class ,'addImage'])->name('add_image');
 require __DIR__.'/auth.php';
