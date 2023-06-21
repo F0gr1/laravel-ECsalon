@@ -20,7 +20,7 @@ use App\Http\Controllers\AddImageController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', [StoreController::class, 'index']);
+Route::get('/', [StoreController::class, 'index'])->name('dashboard');
 Route::get('/sample', [StoreController::class, 'sample']);
 Route::get('/store/course/{id}',[CourseController::class ,'index']);
 Route::get('/image/index', [AddImageController::class, 'index']);

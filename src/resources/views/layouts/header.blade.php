@@ -26,9 +26,15 @@
         </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ Auth::user()->name }}
+          @if(Auth::user() === null)
+          <a class="nav-link" href="{{route('login')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
           </a>
+          @else
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ Auth::user()->name }} 様
+          </a>
+          @endif
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
