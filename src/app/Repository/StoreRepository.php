@@ -14,4 +14,9 @@ class StoreRepository
     {
         return Store::find($id);
     }
+    public static function createStore($request)
+    {
+        $store = new Store;
+        $store->fill($request->all())->save();
+    }
 }

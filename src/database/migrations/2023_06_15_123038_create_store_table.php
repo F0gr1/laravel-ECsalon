@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('store', function (Blueprint $table) {
+        Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->String('name');
             $table->integer('phoneNumber');
@@ -25,7 +25,7 @@ return new class extends Migration
             );
             $table->String('municipality');
             $table->String('adress');
-            $table->String('icon');
+            $table->String('icon')->nullable();
             $table->String('description');
             $table->timestamps();
         });

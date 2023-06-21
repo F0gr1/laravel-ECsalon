@@ -30,7 +30,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('Store/create');
     }
 
     /**
@@ -38,7 +38,8 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->StoreService->createStore($request);
+        return redirect('/');
     }
 
     /**

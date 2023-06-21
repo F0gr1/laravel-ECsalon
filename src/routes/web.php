@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [StoreController::class, 'index'])->name('dashboard');
+Route::get('/store/create',[StoreController::class,'create'])->name('store.create');
+Route::post('/store/store',[StoreController::class, 'store'])->name('store.store');
+Route::put('/store/update',[StoreController::class, 'update'])->name('store.update');
+Route::delete('store/delete/{id}',[StoreController::class, 'delete']);
 Route::get('/sample', [StoreController::class, 'sample']);
 Route::get('/store/course/{id}',[CourseController::class ,'index']);
 Route::get('/image/index', [AddImageController::class, 'index']);

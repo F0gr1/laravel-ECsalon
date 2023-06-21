@@ -2,17 +2,20 @@
 @section('content')
     
 <body>
-    @foreach($courses as $course)
+    
     <div class="container">
-        <div class="card" style="width: 22rem;">
-            <img src="{{asset('storage/course/'.$course->icon)}}" class="card-img-top" style="width:340px; height:340px;">
-               <div class="card-body">
-              <h5 class="card-title"> {{$course -> name}} </h5>
-              <p class="card-text">{{$course -> price}} 円 </p>
-              <a href="#" class="btn btn-primary">詳細</a>
+        <div class="row">
+            @foreach($courses as $course)
+            <div class="card col-4 p-3" style="width: 22rem;">
+                <img src="{{asset('storage/course/'.$course->icon)}}" class="card-img-top" style="width:340px; height:340px;">
+                <div class="card-body">
+                        <h5 class="card-title"> {{$course -> name}} </h5>
+                        <p class="card-text">{{$course -> price}} 円 </p>
+                        <a href="#" class="btn btn-primary">詳細</a>
+                </div>
             </div>
-          </div>
-    @endforeach
+            @endforeach
+        </div>
     </div>
 </body>
 </html>

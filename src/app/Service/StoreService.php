@@ -19,4 +19,9 @@ class StoreService
         $store = StoreRepository::findStore($id);
         return $store;
     }
+
+    public static function createStore($request)
+    {
+        StoreRepository::createStore($request);
+    }
 }

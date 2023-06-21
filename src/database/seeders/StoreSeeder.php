@@ -14,7 +14,7 @@ class StoreSeeder extends Seeder
     public function run(): void
     {
         for($i= 0 ; $i< 5; $i++){
-            DB::table('store')->insert([
+            DB::table('stores')->insert([
                 'name' => Str::random(10),
                 'phoneNumber' =>00000000000,
                 'municipality' => '川越市',
